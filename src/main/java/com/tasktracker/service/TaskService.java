@@ -21,7 +21,7 @@ public class TaskService {
             List<Task> tasks = jsonHandler.readTasks();
             int newId = tasks.isEmpty() ? 1 : tasks.get(tasks.size() - 1).getId() + 1;
             LocalDateTime now = LocalDateTime.now();
-            Task newTask = new Task(newId, description, "todo", now, now);
+            Task newTask = new Task(newId, description, "to-do", now, now);
             tasks.add(newTask);
             jsonHandler.writeTasks(tasks);
             System.out.println("Task added successfully (ID: " + newId + ")");
